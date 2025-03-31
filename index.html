@@ -18,7 +18,7 @@
     <header class="hero-section fullscreen-section text-white text-center">
         <div class="container">
             <!-- Кругле фото -->
-            <div class="window-photo-container animate__animated animate__fadeIn">
+            <div class="window-photo-container">
                 <div class="window-frame">
                     <img src="general.JPG" alt="Emma & Lucas" class="window-photo">
                 </div>
@@ -208,22 +208,31 @@
         
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
         document.addEventListener('DOMContentLoaded', function() {
+    const frame = document.querySelector('.window-frame');
     const img = document.querySelector('.window-photo');
     
-    // Чекаємо повного завантаження зображення
+    // Функція для запуску анімацій
+    function initAnimations() {
+        frame.style.opacity = 0;
+        setTimeout(() => {
+            frame.style.animation = 'fadeIn 1s ease-out forwards';
+        }, 50);
+        
+        img.style.animation = 'photoAppear 1.5s ease-out forwards';
+    }
+
+    // Перевірка стану завантаження зображення
     if (img.complete) {
-        img.classList.add('loaded');
+        initAnimations();
     } else {
-        img.addEventListener('load', function() {
-            this.classList.add('loaded');
-        });
+        img.addEventListener('load', initAnimations);
         img.addEventListener('error', function() {
             console.error('Помилка завантаження зображення');
+            initAnimations(); // Все одно запускаємо анімації
         });
     }
-}); 
+});
     </script>
 </body>
 </html>
