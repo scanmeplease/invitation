@@ -5,6 +5,12 @@
     --text-color: #5a4a42;
     --light-text: #6c757d;
 }
+.bad-script-regular {
+    font-family: "Bad Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -169,7 +175,7 @@ body, html {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: url('background.JPG') no-repeat center;
+    background: url('background.jpg') no-repeat center;
     background-size: cover;
     filter: blur(2px) brightness(0.7);
     z-index: -1;
