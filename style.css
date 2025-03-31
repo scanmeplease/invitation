@@ -16,20 +16,63 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.fullscreen-section {
+    min-height: 100vh; /* 100% висоти вікна */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* вертикальне центрування */
+    padding: 60px 20px; /* відступи від країв */
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .fullscreen-section {
+        min-height: 90vh;
+        padding: 40px 15px;
+    }
+    
+    .fixed-nav {
+        bottom: 20px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+    }
+}
+
+/* Для контенту всередині */
+.fullscreen-section .container {
+    position: relative;
+    z-index: 2;
+}
+
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('background.jpg') no-repeat center center;
-    background-size: cover;
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 20px 0;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(2px) brightness(0.7);
+    z-index: -1;
 }
 
 /* Кругле фото */
 .couple-photo-container {
-    margin: 2rem auto;
     display: flex;
     justify-content: center;
 }
@@ -42,11 +85,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease;
-}
-
-.couple-photo-frame:hover {
-    transform: scale(1.05);
 }
 
 .couple-photo {

@@ -15,7 +15,7 @@
 </head>
 <body>
     <!-- Hero Section -->
-    <header class="hero-section text-white text-center">
+    <header class="hero-section fullscreen-section text-white text-center">
         <div class="container">
             <!-- Кругле фото -->
             <div class="couple-photo-container animate__animated animate__fadeIn">
@@ -25,19 +25,19 @@
             </div>
             
             <!-- Заголовок -->
-            <h1 class="display-3 fw-bold mb-5">Михайло </br> & </br> Вероніка</h1>
-            <p class="lead mb-5">РАЗОМ ЗІ СВОЇМИ РОДИНАМИ<br>ЗАПРОШУЮТЬ ВАС<br>НА СВЯТКУВАННЯ СВОГО ВЕСІЛЛЯ</p>
+            <h1 class="display-4 fw-bold mb-4">Михайло & Вероніка</h1>
+            <p class="lead mb-3">РАЗОМ ЗІ СВОЇМИ РОДИНАМИ<br>ЗАПРОШУЮТЬ ВАС<br>НА СВЯТКУВАННЯ СВОГО ВЕСІЛЛЯ</p>
             
             <!-- Дата -->
-            <div class="date-box my-4 py-3">
+            <div class="date-box">
                 <h2 class="fw-normal">СУБОТА</h2>
                 <h3 class="fw-bold">26 ЛИПНЯ 2025</h3>
-                <p class="mb-0">О 15:30</p>
+                <p>О 15:30</p>
             </div>
             
             <!-- Відлік часу -->
             <div class="countdown-container">
-                <h3 class="mb-4">До нашого весілля залишилось</h3>
+                <h3>До нашого весілля залишилось</h3>
                 <div class="countdown-timer">
                     <div class="countdown-item">
                         <span id="days">00</span>
@@ -57,64 +57,14 @@
                     </div>
                 </div>
             </div>
-            
-            <p class="location mt-4"><i class="fas fa-map-marker-alt me-2"></i>Komunalna St, 21б, Vynohradiv · Puzatyy Shef</p>
         </div>
     </header>
 
     <!-- Основні секції -->
     <div class="container main-content py-5">
-        <!-- Мапа -->
-        <section class="map-section mb-5 rounded-3 overflow-hidden shadow">
-            <div class="ratio ratio-16x9">
-                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.244250621054!2d23.0345421!3d48.152844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47383b4b74438ce5%3A0xb16d3f22b69421a2!2sPuzatyy%20Shef!5e0!3m2!1sen!2sua!4v1711234567890!5m2!1sen!2sua" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            </div>
-        </section>
-
-        <!-- Деталі -->
-        <section class="details-section mb-5 p-4 p-md-5 bg-white rounded-3 shadow-sm">
-            <h2 class="text-center mb-3 section-title"><i class="fas fa-info-circle me-3"></i>ДЕТАЛІ</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="detail-card h-100 p-4">
-                        <div class="detail-icon mb-3">
-                            <i class="fas fa-tshirt"></i>
-                        </div>
-                        <h3>DRESS CODE</h3>
-                        <p>Мигаль казав ош вписати БІЛІ ВІДТІНКИ.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="detail-card h-100 p-4">
-                        <div class="detail-icon mb-3">
-                            <i class="fas fa-bus"></i>
-                        </div>
-                        <h3>TRANSPORT</h3>
-                        <p>Добирайтеся хто як може.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="detail-card h-100 p-4">
-                        <div class="detail-icon mb-3">
-                            <i class="fas fa-hotel"></i>
-                        </div>
-                        <h3>ACCOMODATION</h3>
-                        <p>Хто не бирує йти додому може піти у Сальве зняти собі готель.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Програма -->
-        <section class="program-section position-relative py-5 bg-white rounded-3 shadow-sm">
+        <section class="program-section fullscreen-section position-relative py-5 bg-white rounded-3 shadow-sm mb-5">
             <!-- Фон з кільцями -->
             <div class="rings-background">
                 <img src="background.jpg" alt="Wedding rings" class="rotating-rings">
@@ -147,8 +97,42 @@
             </div>
         </section>
 
+        <!-- Деталі -->
+        <section class="details-section fullscreen-section mb-5 p-4 p-md-5 bg-white rounded-3 shadow-sm">
+            <h2 class="text-center mb-3 section-title"><i class="fas fa-info-circle me-3"></i>ДЕТАЛІ</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="detail-card h-100 p-4">
+                        <div class="detail-icon mb-3">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>DRESS CODE</h3>
+                        <p>Мигаль казав ош вписати БІЛІ ВІДТІНКИ.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="detail-card h-100 p-4">
+                        <div class="detail-icon mb-3">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <h3>TRANSPORT</h3>
+                        <p>Добирайтеся хто як може.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="detail-card h-100 p-4">
+                        <div class="detail-icon mb-3">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>ACCOMODATION</h3>
+                        <p>Хто не бирує йти додому може піти у Сальве зняти собі готель.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Галерея
-        <section class="gallery-section mb-5">
+        <section class="gallery-section fullscreen-section mb-5">
             <h2 class="text-center mb-5 section-title"><i class="fas fa-camera me-3"></i>НАШІ МОМЕНТИ</h2>
             <div class="row g-3">
                 <div class="col-md-4 gallery-item">
@@ -173,6 +157,22 @@
             </a>
         </section>
     </div>
+
+            <!-- Мапа -->
+            <section class="map-section mb-5 rounded-3 overflow-hidden shadow">
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.244250621054!2d23.0345421!3d48.152844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47383b4b74438ce5%3A0xb16d3f22b69421a2!2sPuzatyy%20Shef!5e0!3m2!1sen!2sua!4v1711234567890!5m2!1sen!2sua" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                </div>
+            </section>
+            <p class="location mt-4 mx-1 text-center"><i class="fas fa-map-marker-alt me-2"></i>вул. Комунальна, 21б, Виноградів </br> Сад-сімейна ресторація</p>
 
     <!-- Футер -->
     <footer class="py-2 text-center">
