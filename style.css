@@ -28,20 +28,22 @@ body {
 }
 
 .window-photo-container {
-    display: flex;
-    justify-content: center;
+    width: 310px;
+    height: 350px;
     margin: 1rem auto;
+    position: relative;
 }
 
 .window-frame {
-    width: 310px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     border-radius: 50% 50% 12px 12px;
     background: white;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     position: relative;
     overflow: hidden;
     border: 2px solid #e0e0e0;
+    transform: translateZ(0); /* Фікс для анімацій */
 }
 
 .window-photo {
@@ -49,8 +51,8 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 40% 40% 8px 8px;
-    opacity: 0.4; /* Спочатку невидиме */
-    transition: opacity 1s ease-in-out; /* Плавне з'явлення */
+    opacity: 1;
+    display: block;
 }
 
 /* Додайте цей код в кінець CSS */
