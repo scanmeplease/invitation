@@ -16,28 +16,27 @@
 <body>
     <!-- Hero Section -->
     <header class="hero-section fullscreen-section text-white text-center">
-        <div class="container">
-            <!-- Кругле фото -->
-            <div class="window-photo-container">
-                <div class="window-frame">
-                    <img src="general.JPG" alt="Emma & Lucas" class="window-photo">
+        <div class="container d-flex flex-column justify-content-between h-100">
+            <!-- Заголовок уверху -->
+            <div class="pt-5">
+                <h1 class="display-4 fw-bold mb-4">Михайло & Вероніка</h1>
+            </div>
+            
+            <!-- Основний контент по центру -->
+            <div class="main-content">
+                <p class="lead mb-5 countdown-container">Є ПОДІЇ, ПАМ’ЯТНІ НА ВСЕ ЖИТТЯ, І Є ЛЮДИ, З ЯКИМИ ХОЧЕТЬСЯ ЇХ РОЗДІЛИТИ. </br> ВІД ШИРОГО СЕРЦЯ ЗАПРОШУЄМО ВАС НА СВЯТКУВАННЯ СТВОРЕННЯ НАШОЇ СІМ’Ї</p>
+                
+                <!-- Дата -->
+                <div class="date-box my-4">
+                    <h2 class="fw-normal">СУБОТА</h2>
+                    <h3 class="fw-bold">26 ЛИПНЯ 2025</h3>
+                    <p class="mb-0">О 15:30</p>
                 </div>
             </div>
             
-            <!-- Заголовок -->
-            <h1 class="display-4 fw-bold mb-4">Михайло & Вероніка</h1>
-            <p class="lead mb-3">РАЗОМ ЗІ СВОЇМИ РОДИНАМИ<br>ЗАПРОШУЮТЬ ВАС<br>НА СВЯТКУВАННЯ СВОГО ВЕСІЛЛЯ</p>
-            
-            <!-- Дата -->
-            <div class="date-box">
-                <h2 class="fw-normal">СУБОТА</h2>
-                <h3 class="fw-bold">26 ЛИПНЯ 2025</h3>
-                <p>О 15:30</p>
-            </div>
-            
-            <!-- Відлік часу -->
-            <div class="countdown-container">
-                <h3>До нашого весілля залишилось</h3>
+            <!-- Відлік часу внизу -->
+            <div class="countdown-container pb-5">
+                <h3 class="mb-3">До нашого весілля залишилось</h3>
                 <div class="countdown-timer">
                     <div class="countdown-item">
                         <span id="days">00</span>
@@ -61,7 +60,7 @@
     </header>
 
     <!-- Основні секції -->
-    <div class="container main-content py-5">
+    <div class=" main-content py-5">
 
         <!-- Програма -->
         <section class="program-section fullscreen-section position-relative py-5 bg-white rounded-3 shadow-sm mb-5">
@@ -156,35 +155,41 @@
             ПІДТВЕРДИТИ ПРИСУТНІСТЬ <i class="fas fa-paper-plane ms-2"></i>
             </a>
         </section>
-    </div>
 
-            <!-- Мапа -->
-            <section class="map-section mb-5 rounded-3 overflow-hidden shadow">
-                <div class="ratio ratio-16x9">
-                    <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.244250621054!2d23.0345421!3d48.152844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47383b4b74438ce5%3A0xb16d3f22b69421a2!2sPuzatyy%20Shef!5e0!3m2!1sen!2sua!4v1711234567890!5m2!1sen!2sua" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                </div>
-            </section>
-            <p class="location mt-4 mx-1 text-center"><i class="fas fa-map-marker-alt me-2"></i>вул. Комунальна, 21б, Виноградів </br> Сад-сімейна ресторація</p>
+                    <!-- Мапа -->
+                    <section class="map-section mb-5 rounded-3 overflow-hidden shadow">
+                        <div class="ratio ratio-16x9">
+                            <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.244250621054!2d23.0345421!3d48.152844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47383b4b74438ce5%3A0xb16d3f22b69421a2!2sPuzatyy%20Shef!5e0!3m2!1sen!2sua!4v1711234567890!5m2!1sen!2sua" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        </div>
+                    </section>
+                    <p class="location mt-4 mx-1 text-center"><i class="fas fa-map-marker-alt me-2"></i>вул. Комунальна, 21б, Виноградів </br> Сад-сімейна ресторація</p>
+    </div>
+    <section class="fullscreen-photo-section">
+        <div class="fullscreen-photo-container d-flex align-items-end justify-content-center" style="background-image: url('general.JPG');">
+                            <!-- Дата -->
+                            <div class="countdown-container p-5 text-center text-white">
+                                <h1 class="fw-normal">СУБОТА</h1>
+                                <h2 class="fw-bold">26 ЛИПНЯ 2025</h2>
+                                <h3 class="mb-0">О 15:30</h3>
+                            </div>
+                        </div>
+        </div>
+    </section>
 
     <!-- Футер -->
-    <footer class="py-2 text-center">
+    <!-- <footer class="py-2 text-center">
         <div class="container">
             <p class="mb-2">З любов'ю, Михайло & Вероніка</p>
-            <!-- <div class="social-icons">
-                <a href="#" class="text-decoration-none mx-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-decoration-none mx-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-decoration-none mx-2"><i class="fas fa-envelope"></i></a>
-            </div> -->
         </div>
-    </footer>
+    </footer> -->
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -232,6 +237,17 @@
             initAnimations(); // Все одно запускаємо анімації
         });
     }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const element = document.querySelector('.pulse');
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            element.style.animation = 'pulse 1s 2';
+            observer.disconnect(); // Вимкнення після спрацювання
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
 });
     </script>
 </body>

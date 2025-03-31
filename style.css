@@ -26,6 +26,24 @@ body {
     position: relative;
     overflow: hidden;
 }
+.main-content {
+    margin: auto 0;
+}
+
+.countdown-container {
+    margin-top: auto;
+}
+.hero-section .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 .window-photo-container {
     width: 310px;
@@ -126,10 +144,6 @@ body {
 }
 
 /* Для контенту всередині */
-.fullscreen-section .container {
-    position: relative;
-    z-index: 2;
-}
 
 /* Hero Section */
 .hero-section {
@@ -148,7 +162,7 @@ body {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: url('background.jpg') no-repeat center center;
+    background: url('background.jpg') no-repeat center;
     background-size: cover;
     filter: blur(2px) brightness(0.7);
     z-index: -1;
@@ -237,7 +251,8 @@ body {
 
 /* Анімація пульсації */
 .pulse {
-    animation: pulse 2s infinite;
+    animation: slowPulse 3s 2 forwards;
+    animation-play-state: paused;
 }
 
 /* Стилі для блоку програми */
@@ -297,6 +312,25 @@ body {
     color: #d4a373;
     min-width: 80px;
 }
+.fullscreen-photo-section {
+    width: 100%;
+    height: 100vh; /* Повна висота екрана */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.fullscreen-photo-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+
 
 .event-content {
     padding-left: 20px;
@@ -350,8 +384,9 @@ body {
 
 @keyframes pulse {
     0% { transform: scale(1); }
+    25% { transform: scale(1.01); }
     50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    100% { transform: scale(0); }
 }
 
 @keyframes pulse {
