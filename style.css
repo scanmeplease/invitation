@@ -54,9 +54,7 @@ body {
 }
 
 /* Додайте цей код в кінець CSS */
-.window-photo.loaded {
-    opacity: 1;
-}
+
 
 @media (max-width: 768px) {
     .window-frame {
@@ -376,4 +374,8 @@ body {
         width: 150px;
         height: 150px;
     }
+    
+}
+.window-photo.loaded {
+    opacity: 1;
 }
