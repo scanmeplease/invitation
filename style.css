@@ -53,6 +53,7 @@ body {
     transition: opacity 1s ease-in-out; /* Плавне з'явлення */
 }
 
+/* Додайте цей код в кінець CSS */
 
 
 @media (max-width: 768px) {
@@ -79,7 +80,7 @@ body {
 } */
 
 /* Анімації */
-/* @keyframes float {
+@keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-10px) rotate(1deg); }
 }
@@ -90,7 +91,14 @@ body {
 
 .window-frame:hover .window-photo {
     transform: scale(1.05);
-} */
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes photoAppear {
+    to { opacity: 1; }
+}
 
 /* Адаптація */
 @media (max-width: 768px) {
