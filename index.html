@@ -18,9 +18,9 @@
     <header class="hero-section fullscreen-section text-white text-center">
         <div class="container">
             <!-- Кругле фото -->
-            <div class="couple-photo-container animate__animated animate__fadeIn">
-                <div class="couple-photo-frame">
-                    <img src="general.JPG" alt="Emma & Lucas" class="couple-photo">
+            <div class="window-photo-container animate__animated animate__fadeIn">
+                <div class="window-frame">
+                    <img src="general.JPG" alt="Emma & Lucas" class="window-photo">
                 </div>
             </div>
             
@@ -67,7 +67,7 @@
         <section class="program-section fullscreen-section position-relative py-5 bg-white rounded-3 shadow-sm mb-5">
             <!-- Фон з кільцями -->
             <div class="rings-background">
-                <img src="background.jpg" alt="Wedding rings" class="rotating-rings">
+                <img src="back.png" alt="Wedding rings" class="rotating-rings">
             </div>
             
             <div class="container">
@@ -208,6 +208,22 @@
         
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const img = document.querySelector('.window-photo');
+    
+    // Чекаємо повного завантаження зображення
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+        img.addEventListener('error', function() {
+            console.error('Помилка завантаження зображення');
+        });
+    }
+}); 
     </script>
 </body>
 </html>

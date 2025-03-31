@@ -27,6 +27,82 @@ body {
     overflow: hidden;
 }
 
+.window-photo-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.window-frame {
+    width: 310px;
+    height: 350px;
+    border-radius: 50% 50% 12px 12px;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+}
+
+.window-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40% 40% 8px 8px;
+    opacity: 0.4; /* Спочатку невидиме */
+    transition: opacity 1s ease-in-out; /* Плавне з'явлення */
+}
+
+/* Додайте цей код в кінець CSS */
+.window-photo.loaded {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .window-frame {
+        width: 310px !important;
+        height: 350px !important;
+        transform: none !important;
+        margin: 0 auto;
+    }
+
+}
+
+/* Додатковий ефект "скла"
+.window-frame::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    border-radius: 50% 50% 0 0;
+    z-index: 2;
+} */
+
+/* Анімації */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.window-frame:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+.window-frame:hover .window-photo {
+    transform: scale(1.05);
+}
+
+/* Адаптація */
+@media (max-width: 768px) {
+    .window-frame {
+        width: 200px;
+        height: 240px;
+    }
+}
+
 @media (max-width: 768px) {
     .fullscreen-section {
         min-height: 90vh;
@@ -97,10 +173,10 @@ body {
 .countdown-container {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 15px;
     max-width: 600px;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .countdown-timer {
@@ -173,8 +249,22 @@ body {
 }
 
 .rotating-rings {
-    width: 300px;
+    position: absolute;
+    width: 500px;  /* Збільшено з 300px */
+    height: 500px; /* Збільшено пропорційно */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+/* Для екранів менше 768px */
+@media (max-width: 768px) {
+    .rotating-rings {
+        width: 550px;  /* Збільшений мобільний розмір */
+        height: 550px;
+    }
 }
 
 .program-timeline {
