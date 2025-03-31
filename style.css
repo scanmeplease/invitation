@@ -11,6 +11,13 @@ body {
     color: var(--text-color);
     background-color: #f9f9f9;
 }
+body, html {
+    overflow-x: hidden; /* Блокує горизонтальний скрол */
+    width: 100%;
+    max-width: 100vw; /* Гарантує, що контент не вийде за межі */
+    margin: 0;
+    padding: 0;
+}
 .bloor {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
