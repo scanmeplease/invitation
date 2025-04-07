@@ -3,207 +3,678 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Михайло & Вероніка - Весільне запрошення</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Запрошення на весілля</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- Hero Section -->
-    <header class="hero-section fullscreen-section text-white text-center">
-      <div class="container d-flex flex-column justify-content-between h-100">
-        <!-- Заголовок уверху -->
-        <div class="">
-          <h1 class="display-4 fw-bold mb-0 bad-script-regular">
-            Михайло & Вероніка
+    <!-- Секція 1: Головний банер -->
+    <section
+      id="hero"
+      class="position-relative vh-100"
+      style="
+        background: url('general.JPG') center/cover no-repeat;
+        filter: grayscale(100%);
+      "
+    >
+      <!-- Градієнтний оверлей -->
+      <div
+        class="position-absolute w-100 h-100"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.7) 100%
+          );
+        "
+      ></div>
+
+      <div
+        class="container h-100 d-flex flex-column justify-content-between py-3 py-md-5"
+      >
+        <!-- Блок імен (зверху) -->
+        <div
+          class="names-container text-white text-center text-md-start mt-3 mt-md-0"
+        >
+          <h1 class="display-4 display-md-2 fw-light mb-0 text-shadow">
+            <span class="name-left d-inline-block" style="opacity: 0"
+              >Михайло</span
+            >
+            <span class="name-amp d-inline-block mx-2" style="opacity: 0"
+              >&</span
+            >
+            <span class="name-right d-inline-block" style="opacity: 0"
+              >Вероніка</span
+            >
           </h1>
         </div>
 
-        <!-- Основний контент по центру -->
-        <div class="container size">
-          <p class="countdown-container bad-script-regular size">
-            Є події, пам'ятні на все життя, і є люди, з якими хочеться їх
-            розділити. Від щирого серця запрошуємо вас на святкування створення
-            нашої сім'ї.
-          </p>
-
-          <!-- Дата -->
-          <div class="date-box">
-            <h2 class="fw-normal">СУБОТА</h2>
-            <h3 class="fw-bold">26 ЛИПНЯ 2025</h3>
-            <p class="mb-2">О 15:30</p>
-          </div>
-        </div>
-
-        <!-- Відлік часу внизу -->
-        <div class="countdown-container">
-          <h3 class="mb-1">До нашого весілля залишилось</h3>
-          <div class="countdown-timer">
-            <div class="countdown-item">
-              <span id="days">00</span>
-              <span>Днів</span>
-            </div>
-            <div class="countdown-item">
-              <span id="hours">00</span>
-              <span>Годин</span>
-            </div>
-            <div class="countdown-item">
-              <span id="minutes">00</span>
-              <span>Хвилин</span>
-            </div>
-            <div class="countdown-item">
-              <span id="seconds">00</span>
-              <span>Секунд</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Основні секції -->
-    <div class="main-content py-5">
-      <!-- Програма -->
-      <section
-        class="program-section fullscreen-section position-relative py-5 bg-white rounded-3 shadow-sm mb-5"
-      >
-        <!-- Фон з кільцями -->
-        <div class="rings-background">
-          <img src="back.png" alt="Wedding rings" class="rotating-rings" />
-        </div>
-
-        <div class="container">
-          <h2 class="text-center mb-5 section-title">ПРОГРАМА</h2>
-
-          <div class="program-timeline">
-            <!-- Подія 1 -->
-            <div class="program-event">
-              <div class="event-time">15:30</div>
-              <div class="event-content">
-                <h3>ЦЕРЕМОНІЯ</h3>
-                <p>8221 Sunset Blvd, West Hollywood</p>
-              </div>
-            </div>
-
-            <!-- Подія 2 -->
-            <div class="program-event">
-              <div class="event-time">16:30</div>
-              <div class="event-content">
-                <h3>КОКТЕЙЛІ</h3>
-                <p>8221 Sunset Blvd, West Hollywood</p>
-              </div>
-            </div>
-
-            <!-- Додайте інші події за аналогією -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Деталі -->
-      <section
-        class="details-section fullscreen-section mb-5 p-4 p-md-5 bg-white rounded-3 shadow-sm"
-      >
-        <h2 class="text-center mb-3 section-title">
-          <i class="fas fa-info-circle me-3"></i>ДЕТАЛІ
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="detail-card h-100 p-4">
-              <div class="detail-icon mb-3">
-                <i class="fas fa-tshirt"></i>
-              </div>
-              <h3>DRESS CODE</h3>
-              <p>Мигаль казав ош вписати БІЛІ ВІДТІНКИ.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="detail-card h-100 p-4">
-              <div class="detail-icon mb-3">
-                <i class="fas fa-bus"></i>
-              </div>
-              <h3>TRANSPORT</h3>
-              <p>Добирайтеся хто як може.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="detail-card h-100 p-4">
-              <div class="detail-icon mb-3">
-                <i class="fas fa-hotel"></i>
-              </div>
-              <h3>ACCOMODATION</h3>
-              <p>
-                Хто не бирує йти додому може піти у Сальве зняти собі готель.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RSVP Section -->
-      <section class="container rsvp-section text-center py-2 my-3">
-        <h2 class="mb-4">Ми будемо раді бачити вас!</h2>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfTrV4KhEC0fGGD4Cx7sXWeLgaj-L7L8tZQR1y1giGxYvZi8A/viewform"
-          target="_blank"
-          class="btn btn-rsvp btn-lg px-5 py-3 rounded-pill pulse"
+        <!-- Текст запрошення в окремому блоці -->
+        <div
+          class="invitation-wrapper mx-auto my-4 my-md-5"
+          style="opacity: 0; animation: fadeIn 1.2s ease-out 1.5s forwards"
         >
-          ПІДТВЕРДИТИ ПРИСУТНІСТЬ <i class="fas fa-paper-plane ms-2"></i>
-        </a>
-      </section>
-    </div>
-    <section class="fullscreen-photo-section">
-      <div
-        class="fullscreen-photo-container d-flex align-items-end justify-content-center"
-        style="background-image: url('general.JPG')"
-      >
-        <!-- Дата -->
-        <div class="countdown-container text-center text-white mb-2 mx-2">
-          <p class="fw-normal">СУБОТА</p>
-          <p class="fw-bold">26 ЛИПНЯ 2025</p>
-          <p class="mb-0">О 15:30</p>
-          <br />
-          <h5 class="text-center">
-            <i class="fas fa-map-marker-alt me-2"></i>вул. Комунальна, 21б,
-            Виноградів, Сад-сімейна ресторація
-          </h5>
+          <div class="invitation-card position-relative p-4 p-md-5">
+            <!-- Декоративні кути -->
+            <div class="corner corner-top-left"></div>
+            <div class="corner corner-top-right"></div>
+            <div class="corner corner-bottom-left"></div>
+            <div class="corner corner-bottom-right"></div>
+
+            <p
+              class="fs-4 fs-md-3 fw-light lh-base mb-0 text-center text-shadow text-white"
+            >
+              Є події, пам'ятні на все життя, і є люди, з якими хочеться їх
+              розділити. Від щирого серця запрошуємо вас на святкування
+              створення нашої сім'ї.
+            </p>
+          </div>
+        </div>
+
+        <!-- Блок адреси (знизу) -->
+        <div
+          class="address-block text-white text-center text-md-end mb-3 mb-md-0"
+          style="opacity: 0; animation: fadeIn 1s ease-out 2.2s forwards"
+        >
+          <p class="h4 h3-md text-uppercase mb-1 fw-light text-shadow">
+            26 липня 2025
+          </p>
+          <p class="small text-uppercase opacity-75 text-shadow">
+            Виноградів, вул. Комунальна 21б
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- Секція 2: RSVP -->
+    <section
+      id="rsvp"
+      class="position-relative py-5"
+      style="background: #f8f9fa"
+    >
+      <div class="container">
+        <!-- Заголовок з суттєвим текстом -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-12 text-center">
+            <h2 class="fw-light mb-4" style="color: #333; letter-spacing: 4px">
+              <span
+                class="rsvp-title"
+                style="font-size: 9rem; font-weight: 400; line-height: 1.2"
+                >RSVP</span
+              >
+            </h2>
+            <p class="lead mb-4" style="color: #666; font-size: 1.25rem">
+              Будь ласка, підтвердіть свою присутність до 1 липня 2025
+            </p>
+            <div
+              class="divider mx-auto"
+              style="background: #ddd; width: 100px; height: 2px"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Деталі -->
+        <div class="row justify-content-center g-4 mb-4">
+          <div class="col-md-12 text-center">
+            <a
+              href="https://goo.gl/maps/ВАШ_ІДЕНТИФІКАТОР"
+              target="_blank"
+              class="text-decoration-none"
+              title="Показати на карті"
+            >
+              <div
+                class="icon-circle mx-auto mb-3"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  background: #f0f0f0;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                "
+              >
+                <i
+                  class="bi bi-geo-alt"
+                  style="color: #555; font-size: 4rem"
+                ></i>
+              </div>
+            </a>
+            <p
+              class="mb-1"
+              style="color: #444; font-weight: 500; font-size: 1.5rem"
+            >
+              Сад-сімейна ресторація
+            </p>
+            <small class="text-muted" style="font-size: 1.1rem">Ресторан</small>
+          </div>
+        </div>
+
+        <!-- Кнопка -->
+        <div class="text-center mt-5">
+          <a
+            href="#"
+            class="btn btn-dark btn-lg px-5 py-3 rounded-pill"
+            style="
+              background: #333;
+              border: none;
+              letter-spacing: 1px;
+              font-size: 1.1rem;
+            "
+          >
+            Підтвердити присутність
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція 3: Програма -->
+    <section id="program" class="py-5" style="background: #2a2a2a">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-5 mb-3" style="color: #ffffff; font-weight: 300">
+              <i class="bi bi-calendar2-heart me-2"></i>ПРОГРАМА ВЕСІЛЛЯ
+            </h2>
+            <div
+              class="divider mx-auto mb-4"
+              style="background: #ffffff; width: 80px; height: 1px"
+            ></div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+          <!-- Блок 1 -->
+          <div
+            class="col-12 col-md-6 col-lg-5 program-item"
+            style="opacity: 0; transform: translateY(30px)"
+          >
+            <div class="bg-white p-4 rounded shadow-sm">
+              <div class="d-flex align-items-start">
+                <div
+                  class="pe-3 text-primary"
+                  style="font-size: 1.5rem; min-width: 40px"
+                >
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div
+                  class="pe-3"
+                  style="
+                    color: #000000;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    min-width: 60px;
+                  "
+                >
+                  15:00
+                </div>
+                <div>
+                  <h3
+                    style="
+                      color: #000000;
+                      font-weight: 400;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Зустріч гостей
+                  </h3>
+                  <p class="mb-0" style="color: #555555">
+                    Фуршет та фотосесія з молодят
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Блок 2 -->
+          <div
+            class="col-12 col-md-6 col-lg-5 program-item"
+            style="opacity: 0; transform: translateY(30px)"
+          >
+            <div class="bg-white p-4 rounded shadow-sm">
+              <div class="d-flex align-items-start">
+                <div
+                  class="pe-3 text-danger"
+                  style="font-size: 1.5rem; min-width: 40px"
+                >
+                  <i class="bi bi-heart-fill"></i>
+                </div>
+                <div
+                  class="pe-3"
+                  style="
+                    color: #000000;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    min-width: 60px;
+                  "
+                >
+                  16:00
+                </div>
+                <div>
+                  <h3
+                    style="
+                      color: #000000;
+                      font-weight: 400;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Урочиста церемонія
+                  </h3>
+                  <p class="mb-0" style="color: #555555">
+                    Обмін клятвами та обручками
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Блок 3 -->
+          <div
+            class="col-12 col-md-6 col-lg-5 program-item"
+            style="opacity: 0; transform: translateY(30px)"
+          >
+            <div class="bg-white p-4 rounded shadow-sm">
+              <div class="d-flex align-items-start">
+                <div
+                  class="pe-3 text-warning"
+                  style="font-size: 1.5rem; min-width: 40px"
+                >
+                  <i class="bi bi-emoji-heart-eyes-fill"></i>
+                </div>
+                <div
+                  class="pe-3"
+                  style="
+                    color: #000000;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    min-width: 60px;
+                  "
+                >
+                  18:00
+                </div>
+                <div>
+                  <h3
+                    style="
+                      color: #000000;
+                      font-weight: 400;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Весільний банкет
+                  </h3>
+                  <p class="mb-0" style="color: #555555">
+                    Святкова вечеря та тости
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Блок 4 -->
+          <div
+            class="col-12 col-md-6 col-lg-5 program-item"
+            style="opacity: 0; transform: translateY(30px)"
+          >
+            <div class="bg-white p-4 rounded shadow-sm">
+              <div class="d-flex align-items-start">
+                <div
+                  class="pe-3 text-success"
+                  style="font-size: 1.5rem; min-width: 40px"
+                >
+                  <i class="bi bi-music-note-beamed"></i>
+                </div>
+                <div
+                  class="pe-3"
+                  style="
+                    color: #000000;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    min-width: 60px;
+                  "
+                >
+                  22:00
+                </div>
+                <div>
+                  <h3
+                    style="
+                      color: #000000;
+                      font-weight: 400;
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Танці до ранку
+                  </h3>
+                  <p class="mb-0" style="color: #555555">
+                    Музика, веселощі та конкурси
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція ДЕТАЛІ СВЯТА -->
+    <!-- Секція ДЕТАЛІ СВЯТА -->
+    <section class="details-section">
+      <div class="container">
+        <!-- Заголовок -->
+        <div class="text-center mb-4">
+          <h2 class="display-5" style="color: #000000; font-weight: 300">
+            <i class="bi bi-info-circle me-2"></i>ДЕТАЛІ СВЯТА
+          </h2>
+          <div
+            class="section-divider mx-auto"
+            style="
+              width: 80px;
+              height: 2px;
+              background: #000;
+              margin: 15px auto;
+            "
+          ></div>
+        </div>
+
+        <div class="row g-3 g-md-4 justify-content-center">
+          <!-- Дресс-код -->
+          <div class="col-6 col-sm-6 col-lg-3">
+            <div
+              class="detail-item text-center"
+              style="max-width: 200px; margin: 0 auto"
+            >
+              <div class="detail-icon">
+                <i class="bi bi-palette" style="font-size: 2rem"></i>
+              </div>
+              <h3
+                class="detail-title"
+                style="font-size: 1.2rem; margin: 10px 0"
+              >
+                Дресс-код
+              </h3>
+              <div
+                class="dress-code-colors mt-2 mx-auto"
+                style="max-width: 160px"
+              >
+                <div
+                  class="color-scale d-flex justify-content-center flex-wrap"
+                >
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #ffffff;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #f5f5f5;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #e0e0e0;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #bdbdbd;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #9e9e9e;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #616161;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                  <div
+                    class="color-dot"
+                    style="
+                      background-color: #212121;
+                      width: 18px;
+                      height: 18px;
+                      margin: 2px;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Фотограф -->
+          <div class="col-6 col-sm-6 col-lg-3">
+            <div
+              class="detail-item text-center"
+              style="max-width: 200px; margin: 0 auto"
+            >
+              <div class="detail-icon">
+                <i class="bi bi-camera" style="font-size: 2rem"></i>
+              </div>
+              <h3
+                class="detail-title"
+                style="font-size: 1.2rem; margin: 10px 0"
+              >
+                Фотограф
+              </h3>
+              <p style="font-size: 0.95rem">
+                Професійна фотосесія протягом усього свята
+              </p>
+            </div>
+          </div>
+
+          <!-- Відеозйомка -->
+          <div class="col-6 col-sm-6 col-lg-3">
+            <div
+              class="detail-item text-center"
+              style="max-width: 200px; margin: 0 auto"
+            >
+              <div class="detail-icon">
+                <i class="bi bi-camera-video" style="font-size: 2rem"></i>
+              </div>
+              <h3
+                class="detail-title"
+                style="font-size: 1.2rem; margin: 10px 0"
+              >
+                Відеозйомка
+              </h3>
+              <p style="font-size: 0.95rem">
+                Повнометражне відео вашого особливого дня
+              </p>
+            </div>
+          </div>
+
+          <!-- Жива музика -->
+          <div class="col-6 col-sm-6 col-lg-3">
+            <div
+              class="detail-item text-center"
+              style="max-width: 200px; margin: 0 auto"
+            >
+              <div class="detail-icon">
+                <i class="bi bi-music-note" style="font-size: 2rem"></i>
+              </div>
+              <h3
+                class="detail-title"
+                style="font-size: 1.2rem; margin: 10px 0"
+              >
+                Жива музика
+              </h3>
+              <p style="font-size: 0.95rem">
+                Виступ професійних музикантів на церемонії
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .details-section {
+          padding: 40px 0;
+          background-color: white;
+        }
+        .detail-item {
+          padding: 15px;
+          height: 100%;
+        }
+        .detail-icon {
+          color: #000;
+          margin-bottom: 10px;
+        }
+        .color-dot {
+          border-radius: 50%;
+          border: 1px solid #eee;
+          width: 25px !important;
+          height: 25px !important;
+        }
+
+        @media (max-width: 576px) {
+          .detail-item {
+            padding: 10px 5px;
+          }
+          .detail-icon i {
+            font-size: 1.8rem !important;
+          }
+          .detail-title {
+            font-size: 1.1rem !important;
+          }
+          .detail-item p {
+            font-size: 0.9rem !important;
+          }
+          .color-dot {
+            width: 24px !important;
+            height: 24px !important;
+            margin: 1px !important;
+          }
+        }
+      </style>
+    </section>
+    <!-- Секція 5: Фінальне фото з таймером -->
+    <section
+      id="final"
+      class="position-relative"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+          url('background.JPG') center/cover;
+        padding: 80px 0;
+      "
+    >
+      <div class="container">
+        <div class="text-center text-white">
+          <!-- Таймер -->
+          <div class="countdown-timer mb-5">
+            <h3 class="mb-3 h4">ДО ПОЧАТКУ СВЯТА ЗАЛИШИЛОСЬ</h3>
+            <div class="d-flex justify-content-center flex-wrap">
+              <div class="timer-item mx-1 mx-sm-2">
+                <div class="timer-number" id="days">00</div>
+                <div class="timer-label">ДНІВ</div>
+              </div>
+              <div class="timer-separator d-none d-sm-flex">:</div>
+              <div class="timer-item mx-1 mx-sm-2">
+                <div class="timer-number" id="hours">00</div>
+                <div class="timer-label">ГОДИН</div>
+              </div>
+              <div class="timer-separator d-none d-sm-flex">:</div>
+              <div class="timer-item mx-1 mx-sm-2">
+                <div class="timer-number" id="minutes">00</div>
+                <div class="timer-label">ХВИЛИН</div>
+              </div>
+              <div class="timer-separator d-none d-sm-flex">:</div>
+              <div class="timer-item mx-1 mx-sm-2">
+                <div class="timer-number" id="seconds">00</div>
+                <div class="timer-label">СЕКУНД</div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="h3 mb-5">ДЯКУЄМО, ЩО БУДЕТЕ З НАМИ!</h2>
+          <p class="mt-5">МИ ЧЕКАЄМО НА ЦЕЙ ДЕНЬ З НЕТЕРПІННЯМ</p>
+        </div>
+      </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Відлік часу
-      function updateCountdown() {
-        const weddingDate = new Date("2025-07-26T15:30:00").getTime();
-        const now = new Date().getTime();
-        const diff = weddingDate - now;
+      // Анімація при скролі
+      document.addEventListener("DOMContentLoaded", function () {
+        const programItems = document.querySelectorAll(".program-item");
+        let animated = false;
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        function checkScroll() {
+          const programSection = document.getElementById("program");
+          const sectionPosition = programSection.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (sectionPosition < screenPosition && !animated) {
+            animated = true;
+            animateItems();
+          }
+        }
+
+        function animateItems() {
+          programItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("animate");
+            }, index * 150); // Затримка 150мс між блоками
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        // Перевірити при завантаженні, якщо секція вже у видимій області
+        checkScroll();
+      });
+      // Встановіть дату вашого свята
+      const weddingDate = new Date("2025-07-26T18:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+        const hours = Math.max(
+          0,
+          Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         );
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        const minutes = Math.max(
+          0,
+          Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        );
+        const seconds = Math.max(
+          0,
+          Math.floor((distance % (1000 * 60)) / 1000)
+        );
 
         document.getElementById("days").textContent = days
           .toString()
@@ -217,49 +688,18 @@
         document.getElementById("seconds").textContent = seconds
           .toString()
           .padStart(2, "0");
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown-timer").innerHTML = `
+          <h3 class="mb-2">СВЯТО ПОЧАЛОСЯ!</h3>
+          <p class="mb-0">ЧЕКАЄМО НА ВАС!</p>
+      `;
+        }
       }
 
-      setInterval(updateCountdown, 1000);
       updateCountdown();
-      document.addEventListener("DOMContentLoaded", function () {
-        const frame = document.querySelector(".window-frame");
-        const img = document.querySelector(".window-photo");
-
-        // Функція для запуску анімацій
-        function initAnimations() {
-          frame.style.opacity = 0;
-          setTimeout(() => {
-            frame.style.animation = "fadeIn 1s ease-out forwards";
-          }, 50);
-
-          img.style.animation = "photoAppear 1.5s ease-out forwards";
-        }
-
-        // Перевірка стану завантаження зображення
-        if (img.complete) {
-          initAnimations();
-        } else {
-          img.addEventListener("load", initAnimations);
-          img.addEventListener("error", function () {
-            console.error("Помилка завантаження зображення");
-            initAnimations(); // Все одно запускаємо анімації
-          });
-        }
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        const element = document.querySelector(".pulse");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            if (entries[0].isIntersecting) {
-              element.style.animation = "pulse 1s 2";
-              observer.disconnect(); // Вимкнення після спрацювання
-            }
-          },
-          { threshold: 0.5 }
-        );
-
-        observer.observe(element);
-      });
+      const countdownTimer = setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>

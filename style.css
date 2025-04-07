@@ -1,312 +1,486 @@
-/* Основні стилі */
-:root {
-  --primary-color: #d4a373;
-  --secondary-color: #f8edeb;
-  --text-color: #5a4a42;
-  --light-text: #6c757d;
-}
-.bad-script-regular {
-  font-family: "Bad Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  color: var(--text-color);
-  background-color: #f9f9f9;
-}
-.size {
-  font-size: 2rem !important;
-}
-body,
-html {
-  overflow-x: hidden; /* Блокує горизонтальний скрол */
-  width: 100%;
-  max-width: 100vw; /* Гарантує, що контент не вийде за межі */
-  margin: 0;
-  padding: 0;
-}
-.bloor {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-.fullscreen-section {
-  min-height: 100vh; /* 100% висоти вікна */
-  width: 100%;
+section {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* вертикальне центрування */
-  padding: 60px 20px; /* відступи від країв */
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+#program {
   position: relative;
   overflow: hidden;
 }
-.main-content {
-  margin: auto 0;
+
+.ring-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 0;
+  animation: rotate 15s linear infinite;
+  width: 150px;
+}
+.content-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+.z-index-1 {
+  z-index: 1;
+}
+#hero {
+  background-attachment: fixed;
+}
+/* Секція 1 */
+/* Біла тінь для тексту */
+.text-shadow {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
+    0 0 3px rgba(255, 255, 255, 0.2);
 }
 
-.countdown-container {
-  margin-top: auto;
-}
-.hero-section .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.hero-section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Стилі для картки запрошення */
+.invitation-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Додайте цей код в кінець CSS */
+/* Декоративні кути */
+.corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+}
+
+.corner-top-left {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-top-right {
+  top: 10px;
+  right: 10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+.corner-bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
 
 /* Анімації */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-}
-
-.window-frame:hover {
-  animation: float 3s ease-in-out infinite;
-}
-
-.window-frame:hover .window-photo {
-  transform: scale(1.05);
-}
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
-@keyframes photoAppear {
+/* Решта стилів залишаються незмінними */
+@media (prefers-reduced-motion: no-preference) {
+  .name-left {
+    transform: translateX(-50px);
+    animation: slideIn 0.8s ease-out 0.3s forwards;
+  }
+
+  .name-right {
+    transform: translateX(50px);
+    animation: slideIn 0.8s ease-out 0.6s forwards;
+  }
+
+  .name-amp {
+    transform: scale(0);
+    animation: scaleIn 0.6s ease-out 0.9s forwards;
+  }
+}
+
+@keyframes slideIn {
   to {
+    transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Стилі для імен */
+.name-left,
+.name-right {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.name-left::after,
+.name-right::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.names-container:hover .name-left::after,
+.names-container:hover .name-right::after {
+  transform: scaleX(1);
+}
+
+.name-amp {
+  display: inline-block;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.names-container:hover .name-amp {
+  transform: rotate(10deg);
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+  .names-container h1 {
+    font-size: 2.5rem !important;
+  }
+  .name-amp {
+    margin: 0 8px !important;
+  }
+  .invitation-card {
+    padding: 2rem !important;
+  }
+  .address-block p {
+    font-size: 1.1rem !important;
+  }
+  .text-shadow {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+      0 0 2px rgba(255, 255, 255, 0.2);
+  }
+  .corner {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .names-container h1 {
+    font-size: 2rem !important;
+  }
+  .invitation-card {
+    padding: 1.5rem !important;
+  }
+  .name-left,
+  .name-right {
+    padding: 0 5px;
+  }
+}
+/* Секція 2 */
+/* Глобальні покращення */
+#rsvp {
+  padding: 6rem 0;
+}
+
+/* Анімації */
+.icon-circle:hover {
+  background: #e0e0e0 !important;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.btn-dark {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-dark:hover {
+  background: #222 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-dark:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-dark:hover:after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
   }
 }
 
 /* Адаптація */
 @media (max-width: 768px) {
-  .window-frame {
-    width: 200px;
-    height: 240px;
+  .rsvp-title {
+    font-size: 7rem !important;
+  }
+  #rsvp {
+    padding: 4rem 0;
+  }
+  .icon-circle {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .bi-geo-alt {
+    font-size: 3rem !important;
   }
 }
 
+@media (max-width: 576px) {
+  .rsvp-title {
+    font-size: 5rem !important;
+  }
+  .icon-circle {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .bi-geo-alt {
+    font-size: 2.5rem !important;
+  }
+}
+/* Секція 3 */
+/* Анімація блоків */
+.program-item {
+  transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.program-item.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Стилі для іконок */
+.text-primary {
+  color: #3d3d3d !important;
+}
+.text-danger {
+  color: #3d3d3d !important;
+}
+.text-warning {
+  color: #3d3d3d !important;
+}
+.text-success {
+  color: #3d3d3d !important;
+}
+
+/* Адаптація для мобільних */
 @media (max-width: 768px) {
-  .fullscreen-section {
-    min-height: 90vh;
-    padding: 40px 15px;
+  .display-5 {
+    font-size: 2rem;
   }
-
-  .fixed-nav {
-    bottom: 20px;
-    top: auto;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
+  .rounded {
+    border-radius: 6px !important;
   }
 }
 
-/* Hero Section */
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  overflow: hidden;
+@media (max-width: 576px) {
+  .pe-3 {
+    padding-right: 0.75rem !important;
+    min-width: 35px !important;
+    font-size: 1.4rem !important;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
 }
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: url("background.JPG") no-repeat center;
-  background-size: cover;
-  filter: blur(2px) brightness(0.7);
-  z-index: -1;
+/* Секція 4 */
+.details-section {
+  background-color: white;
+  color: black;
+  padding: 2rem 0;
 }
-
-/* Відлік часу */
-.countdown-container {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  border-radius: 15px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.countdown-item {
-  text-align: center;
-  min-width: 80px;
-}
-
-.countdown-item span:first-child {
-  font-size: 2.5rem;
-  font-weight: bold;
-  display: block;
-  font-family: "Playfair Display", serif;
-}
-
-.countdown-item span:last-child {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* Стилі для кнопки RSVP */
-.btn-rsvp {
-  background: var(--primary-color);
-  color: white;
-  border: none;
+.section-title {
   font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+.section-divider {
+  width: 80px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 1.25rem;
+}
+.detail-item {
+  text-align: center;
+  height: 100%;
+}
+.detail-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: black;
+}
+.detail-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.detail-item p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+.color-dot {
+  width: 167px;
+  height: 167px;
+  border-radius: 50%;
+  margin: 0 2px;
+  border: 1px solid #eee;
 }
 
-.btn-rsvp:hover {
-  background: #b3875e;
+/* Десктопні стилі */
+@media (min-width: 768px) {
+  .details-section {
+    padding: 2.5rem 0;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .section-divider {
+    width: 100px;
+    height: 3px;
+    margin-bottom: 1.5rem;
+  }
+  .detail-item {
+    padding: 1rem;
+  }
+  .detail-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .detail-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .detail-item p {
+    font-size: 1.1rem;
+  }
+  .color-dot {
+    width: 30px;
+    height: 30px;
+    margin: 3px 3px;
+  }
+}
+
+/* Додаткові медіа-запити для дуже малих екранів */
+@media (max-width: 400px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .detail-icon {
+    font-size: 1.75rem;
+  }
+  .detail-title {
+    font-size: 1.1rem;
+  }
+  .detail-item p {
+    font-size: 0.9rem;
+  }
+  .color-dot {
+    width: 30px;
+    height: 30px;
+  }
+}
+/* Секція 5 */
+#final {
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-/* Анімація пульсації */
-.pulse {
-  animation: slowPulse 3s 2 forwards;
-  animation-play-state: paused;
-}
-
-/* Стилі для блоку програми */
-.program-section {
-  background-color: #fff9f9;
-  overflow: hidden;
-}
-
-.rings-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.1;
-  z-index: 0;
-}
-
-.rotating-rings {
-  position: absolute;
-  width: 500px; /* Збільшено з 300px */
-  height: 500px; /* Збільшено пропорційно */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: rotate 20s linear infinite;
-  z-index: -1;
-}
-
-.program-timeline {
-  position: relative;
-  z-index: 1;
+.countdown-timer {
   max-width: 600px;
   margin: 0 auto;
 }
-
-.program-event {
+.timer-item {
+  text-align: center;
+  min-width: 70px;
+}
+.timer-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+}
+.timer-label {
+  font-size: 0.9rem;
+  margin-top: 3px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+.timer-separator {
   display: flex;
-  margin-bottom: 30px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  font-weight: 100;
+  padding: 0 2px;
 }
 
-.event-time {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #d4a373;
-  min-width: 80px;
-}
-.fullscreen-photo-section {
-  width: 100%;
-  height: 100vh; /* Повна висота екрана */
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.fullscreen-photo-container {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.event-content {
-  padding-left: 20px;
-}
-
-.couple-photo-container {
-  position: relative;
-  z-index: 10;
-  margin: 2rem auto;
-  animation: fadeIn 1s ease-out;
-}
-
-.couple-photo-frame {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 6px solid white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  animation: float 6s ease-in-out infinite, pulse 5s ease infinite;
-}
-
-.couple-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.5s ease;
-}
-
-.couple-photo:hover {
-  transform: scale(1.1);
-  filter: brightness(1.05);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
+@media (max-width: 576px) {
+  .timer-item {
+    min-width: 55px;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  .timer-number {
+    font-size: 1.8rem;
+  }
+  .timer-label {
+    font-size: 0.75rem;
+  }
+  #final {
+    padding: 60px 0;
   }
 }
 
-/* Анімації */
 @keyframes rotate {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -315,79 +489,3 @@ html {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.01);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Для екранів менше 768px */
-@media (max-width: 768px) {
-  .rotating-rings {
-    width: 550px; /* Збільшений мобільний розмір */
-    height: 550px;
-  }
-  .size {
-    font-size: 1.6rem !important;
-  }
-}
-@media (max-width: 576px) {
-  .rotating-rings {
-    width: 550px; /* Збільшений мобільний розмір */
-    height: 550px;
-  }
-  .size {
-    font-size: 1.4rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .countdown-timer {
-    flex-wrap: wrap;
-  }
-  .countdown-item {
-    min-width: 70px;
-  }
-  .google-form-container iframe {
-    height: 1200px;
-  }
-  .couple-photo-frame {
-    width: 150px;
-    height: 150px;
-  }
-}
-
