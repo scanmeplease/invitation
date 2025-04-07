@@ -81,7 +81,29 @@ section {
   border-top: none;
 }
 
-/* Оновлені анімації з префіксами */
+/* Базові стилі для імен (приховуємо початково) */
+.name-left, .name-right, .name-amp {
+  opacity: 0;
+  display: inline-block;
+}
+
+/* Спрощені анімації з -webkit- префіксами */
+.name-left {
+  animation: fadeInLeft 1s ease-out 0.3s both;
+  -webkit-animation: fadeInLeft 1s ease-out 0.3s both;
+}
+
+.name-amp {
+  animation: fadeIn 0.8s ease-out 0.6s both;
+  -webkit-animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.name-right {
+  animation: fadeInRight 1s ease-out 0.9s both;
+  -webkit-animation: fadeInRight 1s ease-out 0.9s both;
+}
+
+/* Ключові кадри */
 @keyframes fadeIn {
   to { opacity: 1; }
 }
@@ -89,69 +111,37 @@ section {
   to { opacity: 1; }
 }
 
-@keyframes slideIn {
-  to { transform: translateX(0); opacity: 1; }
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-@-webkit-keyframes slideIn {
-  to { -webkit-transform: translateX(0); opacity: 1; }
-}
-
-@keyframes scaleIn {
-  to { transform: scale(1); opacity: 1; }
-}
-@-webkit-keyframes scaleIn {
-  to { -webkit-transform: scale(1); opacity: 1; }
+@-webkit-keyframes fadeInLeft {
+  from { opacity: 0; -webkit-transform: translateX(-20px); }
+  to { opacity: 1; -webkit-transform: translateX(0); }
 }
 
-/* Стилі з фолбеками для iOS */
-@media (prefers-reduced-motion: no-preference) {
-  .name-left {
-    transform: translateX(-50px);
-    -webkit-transform: translateX(-50px);
-    animation: slideIn 0.8s ease-out 0.3s forwards;
-    -webkit-animation: slideIn 0.8s ease-out 0.3s forwards;
-  }
-  .name-right {
-    transform: translateX(50px);
-    -webkit-transform: translateX(50px);
-    animation: slideIn 0.8s ease-out 0.6s forwards;
-    -webkit-animation: slideIn 0.8s ease-out 0.6s forwards;
-  }
-  .name-amp {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    animation: scaleIn 0.6s ease-out 0.9s forwards;
-    -webkit-animation: scaleIn 0.6s ease-out 0.9s forwards;
-  }
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@-webkit-keyframes fadeInRight {
+  from { opacity: 0; -webkit-transform: translateX(20px); }
+  to { opacity: 1; -webkit-transform: translateX(0); }
 }
 
-/* Фолбек для вимкнених анімацій */
-@media (prefers-reduced-motion: reduce) {
-  .name-left, .name-right, .name-amp {
-    animation: none !important;
-    -webkit-animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    -webkit-transform: none !important;
-  }
-}
-
-/* Хак для Safari: примусовий ререндеринг */
-.name-left, .name-right {
+/* Хак для Safari */
+.name-left, .name-right, .name-amp {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-/* Решта ваших стилів залишаються без змін */
-.name-left,
-.name-right {
+/* Ваші існуючі стилі (без змін) */
+.name-left, .name-right {
   position: relative;
-  display: inline-block;
   padding: 0 5px;
 }
 
-.name-left::after,
-.name-right::after {
+.name-left::after, .name-right::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -172,7 +162,6 @@ section {
 }
 
 .name-amp {
-  display: inline-block;
   font-weight: 300;
   transition: all 0.3s ease;
 }
@@ -190,7 +179,6 @@ section {
   .name-amp {
     margin: 0 8px !important;
   }
-  /* ... інші ваші стилі ... */
 }
 /* Секція 2 */
 /* Глобальні покращення */
